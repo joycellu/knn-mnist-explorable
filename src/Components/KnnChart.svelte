@@ -7,8 +7,8 @@
     const data = [];
     for (let i = 0; i < numPoints; i++) {
       data.push({
-        x: Math.random() * 800,
-        y: Math.random() * 600,
+        x: Math.random() * 750,
+        y: Math.random() * 500,
         class: Math.floor(Math.random() * numClasses),
       });
     }
