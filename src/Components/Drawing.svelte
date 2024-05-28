@@ -72,8 +72,8 @@
     
     async function classifyDrawing() {
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const alphaData = imageData.data.filter((_, i) => i % 4 === 3);
-      const tensorImg = tf.tensor3d(alphaData, [canvas.height, canvas.width, 1]);
+      
+      const tensorImg = tf.browser.fromPixels(imageData, 1);
       console.log(tensorImg.arraySync());
       const resizedImg = tf.image.resizeBilinear(tensorImg, [28, 28]);
       const normalizedImg = resizedImg.div(255.0);
