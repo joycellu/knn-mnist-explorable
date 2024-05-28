@@ -14,6 +14,7 @@
     let lastY = 0;
     let knnClassifier;
     let mnistData;
+    let trained =false;
     
     async function trainClassifier() {
       mnistData = new MnistData();
@@ -31,7 +32,6 @@
     onMount(() => {
       knnClassifier = ml5.KNNClassifier();
       knnClassifier.k = 3;
-      trainClassifier();
     
       canvas = document.getElementById('canvas');
       ctx = canvas.getContext('2d');
@@ -71,6 +71,10 @@
     }
     
     async function classifyDrawing() {
+      if (trained === false) {
+        trainClassifier();
+        trained = true;
+      }
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       
       const tensorImg = tf.browser.fromPixels(imageData, 1);

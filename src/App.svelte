@@ -18,11 +18,11 @@
 <Meta />
 <Title />
 <Intro />
-<!--<KnnChart />-->
-<Drawing />
+<KnnChart />
 <!-- <TextAndMathEquations />  -->
 <!-- <ScrollSide /> -->
 <!-- <LineChart /> -->
 <!-- <ScrollCenter /> -->
 <Conclusion />
+<Drawing />
 <Resources />
