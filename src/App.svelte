@@ -10,8 +10,8 @@
   import ScrollSide from "./Components/ScrollSide.svelte";
   import Drawing from "./Components/Drawing.svelte";
   import Load from "./Components/Load.svelte";
-  import knnChart from "./Components/KnnChart.svelte";
   import KnnChart from "./Components/KnnChart.svelte";
+  import Canvas from "./Components/Canvas.svelte";
 </script>
 
 <Load />
@@ -19,6 +19,7 @@
 <Title />
 <Intro />
 <KnnChart />
+<Canvas />
 <!-- <TextAndMathEquations />  -->
 <!-- <ScrollSide /> -->
 <!-- <LineChart /> -->
