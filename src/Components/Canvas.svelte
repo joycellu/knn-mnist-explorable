@@ -67,7 +67,7 @@
 <div class="card-body">
   <h1 class="body-header">Try it out yourself!</h1>
   <p class="body-text">
-    Draw a number (from 1 to 9) on the canvas below and see how KNN classifies
+    Draw a number (from 0 to 9) on the canvas below and see how KNN classifies
     what the number is!
   </p>
   <div class="canvas-container">
