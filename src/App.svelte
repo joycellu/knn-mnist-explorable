@@ -14,11 +14,11 @@
   import Canvas from "./Components/Canvas.svelte";
 </script>
 
-<Load />
 <Meta />
 <Title />
 <Intro />
 <KnnChart />
+<Load />
 <Canvas />
 <!-- <TextAndMathEquations />  -->
 <!-- <ScrollSide /> -->
