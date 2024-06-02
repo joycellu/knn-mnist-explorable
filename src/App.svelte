@@ -25,5 +25,5 @@
 <!-- <LineChart /> -->
 <!-- <ScrollCenter /> -->
 <Conclusion />
-<Drawing />
+<!-- <Drawing /> -->
 <Resources />
