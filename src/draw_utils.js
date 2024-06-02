@@ -1,6 +1,7 @@
 import $ from 'jquery'
 
 export function initCanvas(id, size=8, color="#000000"){
+    console.log('0');
     var context = document.getElementById(id).getContext("2d");
     var canvas = document.getElementById(id);
     context.strokeStyle =color;
@@ -13,12 +14,14 @@ export function initCanvas(id, size=8, color="#000000"){
     var paint;
 
     function addClick(x, y, dragging) {
+        console.log('1');
         clickX.push(x - $(canvas).parent().offset().left);
         clickY.push(y - $(canvas).parent().offset().top);
         clickDrag.push(dragging);
     }
 
     function drawNew(context) {
+        console.log('2');
         var i = clickX.length - 1;
         if (!clickDrag[i]) {
             if (clickX.length == 0) {
@@ -40,6 +43,7 @@ export function initCanvas(id, size=8, color="#000000"){
     }
 
     function mouseDownEventHandler(e) {
+        console.log('3');
         paint = true;
         var x = e.pageX - canvas.offsetLeft;
         var y = e.pageY - canvas.offsetTop;
@@ -50,20 +54,24 @@ export function initCanvas(id, size=8, color="#000000"){
     }
     
     function mouseUpEventHandler(e) {
+        console.log('4');
         context.closePath();
         paint = false;
     }
 
     function mouseMoveEventHandler(e) {
+        console.log('5');
         var x = e.pageX - canvas.offsetLeft;
         var y = e.pageY - canvas.offsetTop;
         if (paint) {
+            console.log('nani');
             addClick(x, y, true);
             drawNew(context);
         }
     }
 
     function setUpHandler(detectEvent) {
+        console.log('listening');
             canvas.addEventListener('mouseup', mouseUpEventHandler);
             canvas.addEventListener('mousemove', mouseMoveEventHandler);
             canvas.addEventListener('mousedown', mouseDownEventHandler);

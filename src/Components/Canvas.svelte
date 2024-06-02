@@ -1,19 +1,38 @@
 <script>
-    import 'bootstrap/dist/css/bootstrap.css'
-    import * as tf from '@tensorflow/tfjs'
-    import * as tfvis from '@tensorflow/tfjs-vis'
-    import jQuery from 'jquery'
+    import jQuery from 'jquery';
 
-    import {MnistData} from '../mnist_data'
-    import * as util from '../mnist_utils'
-    import {initCanvas} from '../draw_utils'
+    import {MnistData} from '../mnist_data';
+    import * as util from '../mnist_utils';
+    import {initCanvas} from '../draw_utils';
+    import { onMount } from 'svelte';
 
-    initCanvas('predict-canvas')
+    onMount(() => {
+        initCanvas('predict-canvas');
 
-    jQuery('#clear-btn').click(function(){
-        var canvas = jQuery('#predict-canvas')[0]
-        var context = canvas.getContext('2d')
-        context.clearRect(0, 0, canvas.width, canvas.height)
+        jQuery('#clear-btn').click(function(){
+            var canvas = jQuery('#predict-canvas')[0];
+            var context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        })
+
+        jQuery('#predict-btn').click(async() => {
+            var canvas = jQuery('#predict-canvas')[0];
+            var preview = jQuery('#preview-canvas')[0];
+            
+            var img = tf.browser.fromPixels(canvas, 4);
+            var resized = util.cropImage(img, canvas.width);
+            tf.browser.toPixels(resized, preview);
+            
+            var x_data = tf.cast(resized.reshape([1, 28, 28, 1]), 'float32');
+            // var y_pred = model.predict(x_data)    
+            // var prediction = Array.from(y_pred.argMax(1).dataSync())    
+            // $('#prediction').text( 'Predicted: '+ prediction)    
+            
+            // const barchartData = Array.from(y_pred.dataSync()).map((d, i) => {
+            //     return { index: i, value: d }
+            // })
+            // tfvis.render.barchart($('#predict-graph')[0], barchartData,  { width: 400, height: 140 }) 
+        })
     })
 </script>
 
