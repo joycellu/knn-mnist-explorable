@@ -12,6 +12,7 @@
   import Load from "./Components/Load.svelte";
   import KnnChart from "./Components/KnnChart.svelte";
   import Canvas from "./Components/Canvas.svelte";
+  import KYap from "./Components/KYap.svelte";
 </script>
 
 <Meta />
@@ -19,12 +20,7 @@
 <Intro />
 <EuclideanDistance />
 <KnnChart />
+<KYap />
 <Load />
 <Canvas />
-
-<!-- <ScrollSide /> -->
-<!-- <LineChart /> -->
-<!-- <ScrollCenter /> -->
 <Conclusion />
-<!-- <Drawing /> -->
-<Resources />

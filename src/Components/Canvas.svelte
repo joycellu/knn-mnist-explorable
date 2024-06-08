@@ -15,7 +15,7 @@
     knnClassifier = ml5.KNNClassifier();
     knnClassifier.k = 30;
     const mnistData = new MnistData();
-    await mnistData.load(5000, 800);
+    await mnistData.load(6000, 0);
     const [x_train, y_train] = mnistData.getTrainData();
     const numTrainExamples = x_train.shape[0];
     for (let i = 0; i < numTrainExamples; i++) {
@@ -67,9 +67,12 @@
 <div class="card-body">
   <h1 class="body-header">Try it out yourself!</h1>
   <p class="body-text">
-    Draw a number (from 0 to 9) on the canvas below and see how KNN classifies
-    what the number is!
+    Each image is flattened to a 1x784 vector when used in the KNN algorithm. 
+    The input image is compared against each training image, and the closest 
+    matches are taken to predict the digit. Draw a number from 0-9 on the canvas below and click “Predict” 
+    to see how KNN classifies handwritten digits!
   </p>
+  <br>
   <div class="canvas-container">
     <canvas
       id="predict-canvas"
@@ -92,9 +95,10 @@
   </div>
   <div class="button-container">
     <button type="button" class="btn btn-primary" id="clear-btn">Clear</button>
-    <button type="button" class="btn btn-primary" id="predict-btn"
-      >Predict</button
-    >
+    <button type="button" class="btn btn-primary" id="predict-btn">
+      Predict
+    </button>
+    <br>
   </div>
 </div>
 <hr />

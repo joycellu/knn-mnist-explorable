@@ -1,7 +1,7 @@
 <section id="intro">
   <h1 id="intro-hed">Classifying MNIST Dataset With K-Nearest Neighbors</h1>
   <h1 class="intro-sub">
-    Introducing K-Nearest Neighbors and how it can be used for handwritten digit
+    Introducing k-nearest neighbors and how it can be used for handwritten digit
     classification using the MNIST dataset.
   </h1>
   <h3 id="intro__date">
