@@ -15,7 +15,7 @@
     knnClassifier = ml5.KNNClassifier();
     knnClassifier.k = 30;
     const mnistData = new MnistData();
-    await mnistData.load(6000, 0);
+    await mnistData.load(1000, 0);
     const [x_train, y_train] = mnistData.getTrainData();
     const numTrainExamples = x_train.shape[0];
     for (let i = 0; i < numTrainExamples; i++) {
@@ -101,7 +101,6 @@
     <br>
   </div>
 </div>
-<hr />
 
 <style>
   .card-body {
